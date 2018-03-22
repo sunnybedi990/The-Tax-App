@@ -78,10 +78,10 @@ public class ScrollingActivity extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
                 String clicked = listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
-                      if (clicked.equals("TDS ")){
-                          Intent a = new Intent(ScrollingActivity.this, tds.class);
-                          startActivity(a);
-                      }
+                if (clicked.equals("TDS ")) {
+                    Intent a = new Intent(ScrollingActivity.this, tds.class);
+                    startActivity(a);
+                }
                 // TODO Auto-generated method stub
                 Toast.makeText(
                         getApplicationContext(),
@@ -117,6 +117,7 @@ public class ScrollingActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
 
@@ -129,8 +130,6 @@ public class ScrollingActivity extends AppCompatActivity {
         listDataHeader.add("Calculator");
         listDataHeader.add("IMPORTANT DATES");
         listDataHeader.add("PAYMENTS");
-
-
 
 
         // Adding child data
@@ -156,12 +155,12 @@ public class ScrollingActivity extends AppCompatActivity {
         payments.add("Pay INCOME TAX");
         payments.add("Pay GST Challans");
 
-              // Header, Child data
-        listDataChild.put(listDataHeader.get(0),rates );
-        listDataChild.put(listDataHeader.get(1),returns );
-        listDataChild.put(listDataHeader.get(2),calculator );
-        listDataChild.put(listDataHeader.get(3),importantdates );
-        listDataChild.put(listDataHeader.get(4),payments );
+        // Header, Child data
+        listDataChild.put(listDataHeader.get(0), rates);
+        listDataChild.put(listDataHeader.get(1), returns);
+        listDataChild.put(listDataHeader.get(2), calculator);
+        listDataChild.put(listDataHeader.get(3), importantdates);
+        listDataChild.put(listDataHeader.get(4), payments);
 
     }
 }
