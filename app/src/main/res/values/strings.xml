@@ -91,4 +91,5 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_tds_category">tds_category</string>
+    <string name="title_activity_tds_interest_calculator">tds_interest_calculator</string>
 </resources>

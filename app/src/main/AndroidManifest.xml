@@ -24,6 +24,11 @@
             android:name=".tds_category"
             android:label="@string/title_activity_tds_category"
             android:theme="@style/AppTheme" />
+        <activity android:name=".tds_calculator" />
+        <activity
+            android:name=".tds_interest_calculator"
+            android:label="@string/title_activity_tds_interest_calculator"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
