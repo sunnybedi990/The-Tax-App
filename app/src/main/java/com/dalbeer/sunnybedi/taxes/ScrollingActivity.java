@@ -82,6 +82,9 @@ public class ScrollingActivity extends AppCompatActivity {
                 if (clicked.equals("TDS ")) {
                     Intent a = new Intent(ScrollingActivity.this, tds_category.class);
                     startActivity(a);
+                } else if (clicked.equals("TDS Calculator ")) {
+                    Intent a = new Intent(ScrollingActivity.this, tds_interest_calculator.class);
+                    startActivity(a);
                 }
                 // TODO Auto-generated method stub
                 Toast.makeText(
