@@ -20,6 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".tds" />
+        <activity
+            android:name=".tds_category"
+            android:label="@string/title_activity_tds_category"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

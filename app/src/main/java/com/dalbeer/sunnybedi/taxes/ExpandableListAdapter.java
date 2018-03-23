@@ -18,16 +18,19 @@ import java.util.List;
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
 
+    private HashMap<List<String>, List<String>> _listChild;
     private Context _context;
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
 
+
     public ExpandableListAdapter(Context context, List<String> listDataHeader,
-                                 HashMap<String, List<String>> listChildData) {
+                                 HashMap<String, List<String>> listChildData, HashMap<List<String>, List<String>> listChild) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
+        this._listChild = listChild;
 
     }
 
@@ -35,6 +38,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public Object getChild(int groupPosition, int childPosititon) {
         return this._listDataChild.get(this._listDataHeader.get(groupPosition))
                 .get(childPosititon);
+       // return childPosititon;
     }
 
     @Override
@@ -45,8 +49,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
-
-        final String childText = (String) getChild(groupPosition, childPosition);
+/*
+        final CustomExpListView secondLevelExpListView = new CustomExpListView(this._context);
+        String parentNode = (String) getGroup(groupPosition);
+        secondLevelExpListView.setAdapter(new SecondLevelAdapter(this._context, _listDataChild.get(parentNode), _listChild));
+        secondLevelExpListView.setGroupIndicator(null);
+        return secondLevelExpListView;
+        */
+       final String childText = (String) getChild(groupPosition, childPosition);
 
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
@@ -59,12 +69,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         txtListChild.setText(childText);
         return convertView;
+
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
         return this._listDataChild.get(this._listDataHeader.get(groupPosition))
                 .size();
+   // return 1;
     }
 
     @Override

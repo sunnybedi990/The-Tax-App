@@ -16,6 +16,7 @@ public class tds extends AppCompatActivity {
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
+    HashMap<List<String>, List<String>> listChild;
 
 
     @Override
@@ -33,7 +34,7 @@ public class tds extends AppCompatActivity {
         // preparing list data
         prepareListData();
 
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, listChild);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
