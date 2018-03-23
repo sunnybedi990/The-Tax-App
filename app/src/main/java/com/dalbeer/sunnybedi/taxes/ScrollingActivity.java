@@ -18,6 +18,7 @@ public class ScrollingActivity extends AppCompatActivity {
     ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
+    HashMap<List<String>, List<String>> listChild;
     HashMap<String, List<String>> listDataChild;
 
     @Override
@@ -30,7 +31,7 @@ public class ScrollingActivity extends AppCompatActivity {
         // preparing list data
         prepareListData();
 
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, listChild);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
@@ -79,7 +80,7 @@ public class ScrollingActivity extends AppCompatActivity {
                                         int groupPosition, int childPosition, long id) {
                 String clicked = listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
                 if (clicked.equals("TDS ")) {
-                    Intent a = new Intent(ScrollingActivity.this, tds.class);
+                    Intent a = new Intent(ScrollingActivity.this, tds_category.class);
                     startActivity(a);
                 }
                 // TODO Auto-generated method stub
@@ -122,6 +123,7 @@ public class ScrollingActivity extends AppCompatActivity {
         listDataHeader = new ArrayList<String>();
 
         listDataChild = new HashMap<String, List<String>>();
+        listChild = new HashMap<List<String>, List<String>>();
 
         // Adding child data
 
@@ -161,6 +163,14 @@ public class ScrollingActivity extends AppCompatActivity {
         listDataChild.put(listDataHeader.get(2), calculator);
         listDataChild.put(listDataHeader.get(3), importantdates);
         listDataChild.put(listDataHeader.get(4), payments);
+
+        // third level
+    /*    List<String> stringList = new ArrayList<String>();
+        stringList.add("Individual");
+        stringList.add("Company");
+        stringList.add("Non - Resident");
+        listChild.put(listDataChild.get(0), stringList);
+*/
 
     }
 }
