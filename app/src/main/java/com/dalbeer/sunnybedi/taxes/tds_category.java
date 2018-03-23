@@ -4,44 +4,49 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
 public class tds_category extends AppCompatActivity {
 
+    ListView list;
+    String[] web = {
+            "Individuals",
+            "Company",
+            "Non Resident",
 
+    } ;
+    Integer[] imageId = {
+            R.drawable.individual,
+            R.drawable.company,
+            R.drawable.nonresident,
+
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tds_category);
-        setTitle("Category");
-        TextView individuals = (TextView)findViewById(R.id.individuals_textview);
-        TextView company = (TextView)findViewById(R.id.company_textview);
-        TextView nonresident = (TextView)findViewById(R.id.nonresident_textview);
-        individuals.setOnClickListener(new View.OnClickListener() {
+
+        CustomList adapter = new
+                CustomList(tds_category.this, web, imageId);
+        list=(ListView)findViewById(R.id.list);
+        list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                if(position == 0){
                 Intent a = new Intent(tds_category.this, tds.class);
-                startActivity(a);
-            }
-        });
-        company.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent a = new Intent(tds_category.this, tds.class);
-                startActivity(a);
-            }
-        });
-        nonresident.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent a = new Intent(tds_category.this, tds.class);
-                startActivity(a);
+                startActivity(a);}
+                Toast.makeText(tds_category.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+
             }
         });
 
     }
-
-
 
 }
