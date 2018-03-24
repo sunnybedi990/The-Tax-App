@@ -19,16 +19,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tds" />
+        <activity android:name=".rates.tds" />
         <activity
-            android:name=".tds_category"
+            android:name=".rates.tds_category"
             android:label="@string/title_activity_tds_category"
             android:theme="@style/AppTheme" />
-        <activity android:name=".tds_calculator" />
+        <activity android:name=".calculator.tds_calculator" />
         <activity
-            android:name=".tds_interest_calculator"
+            android:name=".calculator.tds_interest_calculator"
             android:label="@string/title_activity_tds_interest_calculator"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name=".returns.tds_returns"
+            android:label="@string/title_activity_tds_returns"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".returns.gst_returns" />
+        <activity android:name=".returns.incometax_returns" />
+        <activity android:name=".rates.incometax_rates" />
+        <activity android:name=".rates.gst_rates" />
+        <activity
+            android:name=".dates.tds_due_date"
+            android:label="@string/title_activity_tds_due_date"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".dates.gst_due_date" />
+        <activity android:name=".dates.incometax_due_dates" />
+        <activity android:name=".payments.tds_payment" />
+        <activity android:name=".payments.gst_payments" />
+        <activity android:name=".payments.incometax_payment" />
+        <activity android:name=".calculator.gst_calculator" />
+        <activity android:name=".calculator.incometax_calculator"></activity>
     </application>
 
 </manifest>

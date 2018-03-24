@@ -1,4 +1,4 @@
-package com.dalbeer.sunnybedi.taxes;
+package com.dalbeer.sunnybedi.taxes.listviews;
 
 /**
  * Created by sunnybedi on 23/03/18.
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.dalbeer.sunnybedi.taxes.R;
 
 public class CustomList extends ArrayAdapter<String>{
 

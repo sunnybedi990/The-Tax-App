@@ -1,7 +1,9 @@
-package com.dalbeer.sunnybedi.taxes;
+package com.dalbeer.sunnybedi.taxes.calculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.dalbeer.sunnybedi.taxes.R;
 
 public class tds_calculator extends AppCompatActivity {
     private String tds;

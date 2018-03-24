@@ -1,4 +1,4 @@
-package com.dalbeer.sunnybedi.taxes;
+package com.dalbeer.sunnybedi.taxes.listviews;
 
 /**
  * Created by sunnybedi on 22/03/18.
@@ -10,7 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.dalbeer.sunnybedi.taxes.R;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,14 +26,16 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
     private HashMap<String, List<String>> _listDataChild;
+    private final Integer[] imageId;
 
 
     public ExpandableListAdapter(Context context, List<String> listDataHeader,
-                                 HashMap<String, List<String>> listChildData, HashMap<List<String>, List<String>> listChild) {
+                                 HashMap<String, List<String>> listChildData, HashMap<List<String>, List<String>> listChild, Integer[] imageId) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
         this._listChild = listChild;
+        this.imageId = imageId;
 
     }
 
@@ -109,10 +114,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.lblListHeader);
-
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView_mainactivity);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
-
+        if(imageId != null)
+        imageView.setImageResource(imageId[groupPosition]);
 
         return convertView;
     }

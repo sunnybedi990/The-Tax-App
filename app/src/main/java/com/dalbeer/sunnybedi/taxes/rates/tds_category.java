@@ -1,4 +1,4 @@
-package com.dalbeer.sunnybedi.taxes;
+package com.dalbeer.sunnybedi.taxes.rates;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.dalbeer.sunnybedi.taxes.R;
+import com.dalbeer.sunnybedi.taxes.listviews.CustomList;
 
 public class tds_category extends AppCompatActivity {
 

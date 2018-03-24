@@ -1,10 +1,13 @@
-package com.dalbeer.sunnybedi.taxes;
+package com.dalbeer.sunnybedi.taxes.rates;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
+
+import com.dalbeer.sunnybedi.taxes.R;
+import com.dalbeer.sunnybedi.taxes.listviews.ExpandableListAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,14 +20,35 @@ public class tds extends AppCompatActivity {
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     HashMap<List<String>, List<String>> listChild;
-
+    Integer[] imageId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tds);
         setTitle("TDS");
+        imageId = new Integer[]{
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
+                R.drawable.tds,
 
+        };
         // get the listview
 
 
@@ -34,7 +58,7 @@ public class tds extends AppCompatActivity {
         // preparing list data
         prepareListData();
 
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, listChild);
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, listChild, imageId);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);

@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import com.dalbeer.sunnybedi.taxes.calculator.tds_interest_calculator;
+import com.dalbeer.sunnybedi.taxes.listviews.ExpandableListAdapter;
+import com.dalbeer.sunnybedi.taxes.rates.tds_category;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,8 +34,17 @@ public class ScrollingActivity extends AppCompatActivity {
 
         // preparing list data
         prepareListData();
+        Integer[] imageId = {
+                R.drawable.taxrate,
+                R.drawable.tax,
+                R.drawable.calculator,
+                R.drawable.important_date2,
+                R.drawable.payments,
 
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, listChild);
+
+        };
+
+        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild, listChild, imageId);
 
         // setting list adapter
         expListView.setAdapter(listAdapter);
@@ -133,8 +146,8 @@ public class ScrollingActivity extends AppCompatActivity {
         listDataHeader.add("Rates");
         listDataHeader.add("Returns");
         listDataHeader.add("Calculator");
-        listDataHeader.add("IMPORTANT DATES");
-        listDataHeader.add("PAYMENTS");
+        listDataHeader.add("Important Dates");
+        listDataHeader.add("Payments");
 
 
         // Adding child data

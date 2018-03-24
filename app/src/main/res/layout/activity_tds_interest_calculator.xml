@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dalbeer.sunnybedi.taxes.tds_interest_calculator">
+    tools:context="com.dalbeer.sunnybedi.taxes.calculator.tds_interest_calculator">
 
 
     <include layout="@layout/content_tds_interest_calculator" />

@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dalbeer.sunnybedi.taxes.calculator.tds_calculator">
+    tools:context="com.dalbeer.sunnybedi.taxes.rates.gst_rates">
 
 </android.support.constraint.ConstraintLayout>

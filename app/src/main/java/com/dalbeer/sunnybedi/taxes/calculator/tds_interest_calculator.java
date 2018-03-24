@@ -1,4 +1,4 @@
-package com.dalbeer.sunnybedi.taxes;
+package com.dalbeer.sunnybedi.taxes.calculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import com.dalbeer.sunnybedi.taxes.R;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
