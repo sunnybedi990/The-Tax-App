@@ -47,7 +47,11 @@
         <activity android:name=".payments.gst_payments" />
         <activity android:name=".payments.incometax_payment" />
         <activity android:name=".calculator.gst_calculator" />
-        <activity android:name=".calculator.incometax_calculator"></activity>
+        <activity android:name=".calculator.incometax_calculator" />
+        <activity
+            android:name=".userprofile.profile"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

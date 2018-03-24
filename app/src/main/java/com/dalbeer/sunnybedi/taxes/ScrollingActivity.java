@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.dalbeer.sunnybedi.taxes.calculator.tds_interest_calculator;
 import com.dalbeer.sunnybedi.taxes.listviews.ExpandableListAdapter;
 import com.dalbeer.sunnybedi.taxes.rates.tds_category;
+import com.dalbeer.sunnybedi.taxes.userprofile.profile;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -114,26 +115,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_scrolling, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
@@ -188,6 +170,41 @@ public class ScrollingActivity extends AppCompatActivity {
         listChild.put(listDataChild.get(0), stringList);
 */
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(this, profile.class));
+         //   LocationFound();
+            return true;
+        }
+        if (id == R.id.action_user) {
+            //   LocationFound();
+            return true;
+        }
+        if (id == R.id.action_logout) {
+          //  firebaseAuth.signOut();
+            //closing activity
+            finish();
+            //starting login activity
+         //   startActivity(new Intent(this, login.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
